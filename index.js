@@ -1,0 +1,35 @@
+const express = require('express');
+const app = express();
+
+app.get('/getActivities', (req, res) => {
+  const activities = [{
+    "activityId" : 1,
+    "title" : "Subida al cerro catedral",
+    "type" : "ACTIVITY",
+    "startDate" : "2022-01-22 01:30:00",
+    "endDate" : "2022-01-22 23:30:00",
+    "status" : "IN_PROGRESS",
+    },
+    {
+    "activityId" : 2,
+    "title" : "Fiesta de espuma",
+    "type" : "PARTY",
+    "startDate" : "2022-01-22 01:30:00",
+    "endDate" : "2022-01-22 23:30:00",
+    "status" : "DONE",
+    },
+    {
+    "activityId" : 3,
+    "title" : "Desayuno",
+    "type":"FOOD",
+    "startDate" : null,
+    "endDate" : null,
+    "status" : null,
+    },];
+
+  res.json(activities);
+});
+
+app.listen(3000, () => {
+  console.log('Server started on port 3000');
+});
